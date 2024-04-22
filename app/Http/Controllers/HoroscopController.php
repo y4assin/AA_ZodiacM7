@@ -72,7 +72,7 @@ class HoroscopController extends Controller
         // RECORREMOS LOS SIGNOS DEL ZODIAC
         foreach ($temps as $temp) {
             foreach ($horoscops as $horoscop) {
-                $text = file_get_contents('https://aztro.sameerkumar.website/?sign=' . $horoscop . '&day=' . $temp);
+                $text = file_get_contents("https://www.astrology-zodiac-signs.com/api/call.php?time=$temp&sign=$horoscop");
                 Horoscop::create([
                     'date' => Carbon::now()->format('d/m/y'),
                     'lang' => 'en',
